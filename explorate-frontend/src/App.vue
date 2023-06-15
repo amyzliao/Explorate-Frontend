@@ -1,16 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <router-view />
+  <!-- <TestPage/>
+  <HomePage/>
+  <DatabasePage/>
+  <ResourcePage/>
+  <AboutPage/> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HomePage from './components/HomePage.vue'
+// import TestPage from './components/TestPage.vue'
+// import AboutPage from './components/AboutPage.vue'
+// import DatabasePage from './components/DatabasePage.vue'
+// import ResourcePage from './components/ResourcePage.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    // HomePage,
+    // AboutPage,
+    // TestPage,
+    // DatabasePage,
+    // ResourcePage
+}
 }
 </script>
 
@@ -21,6 +33,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body {
+  padding:0;
+  margin:0;
 }
 </style>
