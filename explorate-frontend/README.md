@@ -2,13 +2,15 @@
 
 ## Project setup
 ```
-npm install
+cd *into the explorate-frontend folder*
+npm i
 ```
 
-### Compiles and hot-reloads for development
+### Development server
 ```
 npm run serve
 ```
+The website runs in `localhost:8080`.
 
 ### Compiles and minifies for production
 ```
