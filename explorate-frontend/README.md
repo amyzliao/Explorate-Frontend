@@ -23,6 +23,7 @@ Compile changes and deploy to firebase:
 npm run build
 firebase deploy
 ```
+The deployed website is hosted on `https://explorate-3452a.web.app/`.
 
 ### Lints and fixes files
 ```
