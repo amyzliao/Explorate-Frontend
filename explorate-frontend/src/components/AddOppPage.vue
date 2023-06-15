@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         async addOpp() {
-            console.log("addOpp called")
+            // console.log("addOpp called")
             // const form = reactive({})
             let result = await createOpp({
                 name: this.name,
@@ -48,7 +48,10 @@ export default {
                 website: this.website
             });
             console.warn(result)
-            console.log("wat")
+            if (result == 201) {
+                this.$router.push({name:'DatabasePage'});
+            }
+            // console.log("wat")
         }
     }
 }

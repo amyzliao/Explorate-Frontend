@@ -21,13 +21,16 @@ const oppCollection = db.collection('opportunities')
 
 export const createOpp = opp => {
     console.log(opp)
-    return oppCollection.add(opp)
-                        .then((docRef) => {
-                            console.log("Document written with ID: ", docRef.id);                        
-                        })
-                        .catch((error) => {
-                            console.error("Error adding document: ", error);
-                        });
+    let result = 201
+    oppCollection.add(opp)
+        .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id)
+        })
+        .catch((error) => {
+            console.error("Error adding document: ", error)
+            result = 300
+        });
+    return result
 }
 
 export const getUser = async id => {
