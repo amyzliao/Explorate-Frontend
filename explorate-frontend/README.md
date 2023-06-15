@@ -12,9 +12,16 @@ npm run serve
 ```
 The website runs in `localhost:8080`.
 
-### Compiles and minifies for production
+### Deploy to firebase
+You need a [firebase](https://console.firebase.google.com/) account. Log into firebase from terminal:
+```
+cd *into the explorate-frontend folder*
+firebase login
+```
+Compile changes and deploy to firebase:
 ```
 npm run build
+firebase deploy
 ```
 
 ### Lints and fixes files
