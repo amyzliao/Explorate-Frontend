@@ -1,6 +1,6 @@
 # explorate-frontend
 
-## Project setup
+### Project setup
 ```
 cd *into the explorate-frontend folder*
 npm i
