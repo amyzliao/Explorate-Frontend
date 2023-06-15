@@ -17,7 +17,7 @@
 export default {
   name: 'App',
   components: {
-    // HomePage,
+    // HomePage
     // AboutPage,
     // TestPage,
     // DatabasePage,
@@ -37,5 +37,26 @@ export default {
 body {
   padding:0;
   margin:0;
+}
+.form {
+  padding: 20px;
+}
+.form input {
+  width: 300px;
+  height: 40px;
+  padding-left: 20px;
+  display: block;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid orangered;
+}
+.form button {
+  width: 320px;
+  height: 40px;
+  border: 2px solid orangered;
+  background: orangered;
+  color: white;
+  cursor: pointer;
 }
 </style>
