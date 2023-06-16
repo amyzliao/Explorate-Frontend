@@ -28,22 +28,44 @@ export const createOpp = opp => {
         })
         .catch((error) => {
             console.error("Error adding document: ", error)
-            result = 300
+            result = 301
         });
     return result
 }
 
-export const getUser = async id => {
+export const getOpp = async id => {
     const opp = await oppCollection.doc(id).get()
     return opp.exists ? opp.data() : null
 }
 
 export const updateOpp = (id, opp) => {
-    return oppCollection.doc(id).update(opp)
+    console.log("updateOpp")
+    console.log(opp)
+    console.log(id)
+    let result = 200
+    oppCollection.doc(id).update(opp)
+        .then(() => {
+            console.log("Successful update")
+        })
+        .catch((error) => {
+            console.error("Error editing document: ", error)
+            result = 300
+        });
+    return result
 }
 
 export const deleteOpp = id => {
-    return oppCollection.doc(id).delete()
+    console.log(id)
+    let result = 200
+    oppCollection.doc(id).delete()
+        .then(() => {
+            console.log("Successful deletion")
+        })
+        .catch((error) => {
+            console.error("Error deleting: ", error)
+            result = 300
+        })
+    return result
 }
 
 export const useLoadOpps = () => {

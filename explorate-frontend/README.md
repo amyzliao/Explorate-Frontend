@@ -8,6 +8,7 @@ npm i
 
 ### Development server
 ```
+cd *into the explorate-frontend folder*
 npm run serve
 ```
 The website runs in `localhost:8080`.
