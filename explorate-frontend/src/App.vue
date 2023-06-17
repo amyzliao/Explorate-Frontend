@@ -66,4 +66,52 @@ body {
   color: white;
   cursor: pointer;
 }
+
+.signup, .signin {
+    background-color: gray;
+    width: 500px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.signup input, .signin input {
+    width: 300px;
+    height: 40px;
+    padding-left: 20px;
+    display: block;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.signup button, .signin button {
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 326px;
+    font-size: 16px;
+    font-family: "Inter";
+    margin-top: 10px;
+}
+
+.signuppagebutton, .signinpagebutton {
+    border-radius: 20px;
+    background-color: #e7513f;
+    color: white;
+}
+
+.google {
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.signuppagesigninbutton, .signinpagesignupbutton {
+    border-radius: 20px;
+    background-color: white;
+}
 </style>

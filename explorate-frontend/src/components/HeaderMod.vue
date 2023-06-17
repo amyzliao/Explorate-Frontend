@@ -2,7 +2,7 @@
     <div class="nav">
         <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
         <button class="signupbutton" v-on:click="this.$router.push('/signup')">Sign Up</button>
-        <button class="signinbutton">Sign In</button>
+        <button class="signinbutton" v-on:click="this.$router.push('/signin')">Sign In</button>
         <router-link to="/database">Database (temp)</router-link>
         <!-- <router-link to="/about">About Us</router-link> -->
         <router-link to="/">About Us</router-link>

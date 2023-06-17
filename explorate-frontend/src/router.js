@@ -7,6 +7,7 @@ import ResourcePage from './components/ResourcePage.vue'
 import AddOppPage from './components/AddOppPage.vue'
 import EditOppPage from './components/EditOppPage.vue'
 import SignUp from './components/SignUp.vue'
+import SignIn from './components/SignIn.vue'
 // import TestPage from './components/TestPage.vue'
 
 const routes=[
@@ -44,6 +45,11 @@ const routes=[
         name: 'SignUpPage',
         component: SignUp,
         path: '/signup'
+    },
+    {
+        name: 'SignInPage',
+        component: SignIn,
+        path: '/signin'
     }
 ];
 

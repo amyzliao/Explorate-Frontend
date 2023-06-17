@@ -85,6 +85,7 @@ export default {
     float: right;
     width: 50%;
     background-color: green;
+    margin: auto;
 }
 
 .left button {
@@ -98,6 +99,7 @@ export default {
     float: left;
     cursor: pointer;
     margin-left: 90px;
+    margin-bottom: 30px;
 }
 
 .find {
