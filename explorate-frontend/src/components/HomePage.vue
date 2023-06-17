@@ -1,7 +1,22 @@
 <template>
     <HeaderMod />
-    <h1>Home Page</h1>
+    <div class="home">
+        <div class="left">
+            <h1>Global Connections<br>Driven by<br>Sustainable Impact</h1>
+            <p>Discover without limitation. <br> Impact without assumption.</p>
+            <button class="find">Find a program</button>
+            <button class="partner">Partner with us</button>
+        </div>
+        <div class="right">
+            <img class="empty" src="../assets/-Insert_image_here-.svg.png"/>
+        </div>
+    </div>
+    <div class="cards">
+        <h2>Make the world a better place together</h2>
+        <p>Get the community and resources you need all in one place</p>
 
+
+    </div>
     <FooterMod />
 </template>
 
@@ -17,3 +32,63 @@ export default {
     }
 }
 </script>
+
+<style>
+.home {
+    padding-top: 50px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+
+.left {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+.left h1 {
+    font-size: 55px;
+    font-weight: normal;
+    text-align: left;
+    padding-bottom: 10px;
+    margin-left: 90px;
+}
+
+.left p {
+    text-align: left;
+    padding-bottom: 20px;
+    font-size: 20px;
+    margin-left: 90px;
+}
+
+.right {
+    float: right;
+    width: 50%;
+    background-color: green;
+}
+
+.left button {
+    height: 55px;
+    width: 240px;
+    border-radius: 6px;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #e7513f;
+    float: left;
+    cursor: pointer;
+    margin-left: 90px;
+}
+
+.find {
+    background-color: #e7513f;
+    color: white;
+}
+
+.partner {
+    background-color: white;
+    color: #e7513f;
+    margin-left: 30px;
+}
+</style>
