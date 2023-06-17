@@ -1,8 +1,8 @@
 <template>
     <div class="nav">
         <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
-        <button class="signup">Sign Up</button>
-        <button class="signin">Sign In</button>
+        <button class="signupbutton" v-on:click="this.$router.push('/signup')">Sign Up</button>
+        <button class="signinbutton">Sign In</button>
         <router-link to="/database">Database (temp)</router-link>
         <!-- <router-link to="/about">About Us</router-link> -->
         <router-link to="/">About Us</router-link>
@@ -23,7 +23,7 @@ export default {
     overflow: hidden;
 }
 
-.logo {
+.nav img {
     height: 50px;
     margin-left: 10px;
     margin-top: 10px;
@@ -57,15 +57,15 @@ export default {
     cursor: pointer;
 }
 
-.signin:hover {
+.signinbutton:hover {
     background-color: #f1f1f1;
 }
 
-.signup:hover {
+.signupbutton:hover {
     background-color: #414141;
 }
 
-.signin {
+.signinbutton {
     float: right;
     text-decoration: none;
     padding: 20px;
@@ -74,7 +74,7 @@ export default {
     margin-left: 20px;
 }
 
-.signup {
+.signupbutton {
     float: right;
     text-decoration: none;
     padding: 20px;
