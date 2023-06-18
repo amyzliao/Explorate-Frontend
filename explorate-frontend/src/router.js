@@ -3,7 +3,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 import HomePage from './components/HomePage.vue'
 import AboutPage from './components/AboutPage.vue'
 import DatabasePage from './components/DatabasePage.vue'
-import ResourcePage from './components/ResourcePage.vue'
+import PartnerPage from './components/PartnerPage.vue'
 import AddOppPage from './components/AddOppPage.vue'
 import EditOppPage from './components/EditOppPage.vue'
 import SignUp from './components/SignUp.vue'
@@ -27,8 +27,8 @@ const routes=[
         path: '/database'
     },
     {
-        name: 'ResourcePage',
-        component: ResourcePage,
+        name: 'PartnerPage',
+        component: PartnerPage,
         path: '/resources'
     },
     {

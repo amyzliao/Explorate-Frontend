@@ -114,4 +114,59 @@ body {
     border-radius: 20px;
     background-color: white;
 }
+
+.home, .resource, .resource-2 {
+    padding-top: 50px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+
+.home-left, .resource-left, .resource-left-2 {
+    float: left;
+    width: 50%;
+    text-align: center;
+    color: #383b3d;
+}
+
+.home-left h1, .resource-left h1 {
+    font-size: 55px;
+    font-weight: normal;
+    text-align: left;
+    padding-bottom: 10px;
+    margin-left: 100px;
+}
+
+.home-left p, .resource-left p {
+    text-align: left;
+    padding-bottom: 20px;
+    font-size: 20px;
+    margin-left: 100px;
+}
+
+.home-right, .resource-right {
+    float: right;
+    width: 50%;
+    background-color: green;
+    margin: auto;
+}
+
+.home-left button, .resource-left button {
+    height: 55px;
+    width: 240px;
+    border-radius: 6px;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #e7513f;
+    float: left;
+    cursor: pointer;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+
+.find, .connect {
+    background-color: #e7513f;
+    color: white;
+}
 </style>

@@ -1,13 +1,13 @@
 <template>
     <HeaderMod />
     <div class="home">
-        <div class="left">
+        <div class="home-left">
             <h1>Global Connections<br>Driven by<br>Sustainable Impact</h1>
             <p>Discover without limitation. <br> Impact without assumption.</p>
             <button class="find">Find a program</button>
             <button class="partner">Partner with us</button>
         </div>
-        <div class="right">
+        <div class="home-right">
             <img class="empty" src="../assets/-Insert_image_here-.svg.png"/>
         </div>
     </div>
@@ -53,60 +53,6 @@ export default {
 </script>
 
 <style>
-.home {
-    padding-top: 50px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    padding-bottom: 50px;
-}
-
-.left {
-    float: left;
-    width: 50%;
-    text-align: center;
-}
-
-.left h1 {
-    font-size: 55px;
-    font-weight: normal;
-    text-align: left;
-    padding-bottom: 10px;
-    margin-left: 90px;
-}
-
-.left p {
-    text-align: left;
-    padding-bottom: 20px;
-    font-size: 20px;
-    margin-left: 90px;
-}
-
-.right {
-    float: right;
-    width: 50%;
-    background-color: green;
-    margin: auto;
-}
-
-.left button {
-    height: 55px;
-    width: 240px;
-    border-radius: 6px;
-    font-family: "Inter";
-    font-size: 14px;
-    font-weight: bold;
-    border: 2px solid #e7513f;
-    float: left;
-    cursor: pointer;
-    margin-left: 90px;
-    margin-bottom: 30px;
-}
-
-.find {
-    background-color: #e7513f;
-    color: white;
-}
-
 .partner {
     background-color: white;
     color: #e7513f;
