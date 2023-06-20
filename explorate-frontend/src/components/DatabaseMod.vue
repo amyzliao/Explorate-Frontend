@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { useLoadOpps, deleteOpp } from '@/firebase'
+import { dbUseLoad, dbDelete } from '@/firebase'
 
 export default {
     name: 'DatabaseMod',
@@ -35,13 +35,13 @@ export default {
         }
     },
     methods: {
-        async loadData() {
-            let result = await useLoadOpps()
+        loadData() {
+            let result = dbUseLoad('opportunities')
             this.oppCollection = result
             console.warn(this.oppCollection)
         },
-        async deleteThisOpp(id) {
-            let result = await deleteOpp(id)
+        deleteThisOpp(id) {
+            let result = dbDelete('opportunities', id)
             console.warn(result)
             if (result == 200) {
                 this.loadData()

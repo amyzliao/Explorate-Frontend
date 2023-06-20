@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { createOpp } from '@/firebase'
+import { dbCreate } from '@/firebase'
 import HeaderMod from './HeaderMod.vue'
 import FooterMod from './FooterMod.vue'
 
@@ -37,7 +37,7 @@ export default {
     methods: {
         async addOpp() {
             // console.log("addOpp called")
-            let result = await createOpp({
+            let result = await dbCreate('opportunities', {
                 name: this.name,
                 contact: this.contact,
                 title: this.title,
