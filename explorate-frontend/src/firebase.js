@@ -15,8 +15,8 @@ const firebaseConfig = {
 
 // firebase.initializeApp(firebaseConfig);
 // const db = firebase.firestore();
-const app = firebase.initializeApp(firebaseConfig);
-const db = app.firestore();
+firebase.initializeApp(firebaseConfig);
+export const db = firebase.firestore();
 // const oppCollection = db.collection('opportunities')
 // const usersCollection = db.collection('users')
 
@@ -35,7 +35,6 @@ const db = app.firestore();
 // }
 
 export const dbCreate = (col, val) => {
-    console.log(col)
     let result = 201
     db.collection(col).add(val).then((docRef) => {
         console.log("Document written with ID: ", docRef.id)
@@ -131,5 +130,30 @@ export const dbUseLoad = col => {
         }))
     })
     onUnmounted(close)
+    return result
+}
+
+export const dbGetUser = (col, email, password) => {
+    // let result = ref(null)
+    // db.collection(col).where("contact", "==", email).where("password", "==", password).get().then((query) => {
+    //     result.value = query.docs[0].data()
+    //     // console.log(query.docs[0].data())
+    // }).catch((error) => {
+    //     console.log("error", error)
+    // })
+
+    let result = db.collection(col).where("contact", "==", email).where("password", "==", password).get()
+    // .then((query) => {
+    //     query.docs.data()
+    // }).catch((error) => {
+    //     console.log('error', error)
+    // })
+
+    // console.log(result.then((query) => {
+    //     query.data()
+    // }).catch((error) => {
+    //     console.log('error', error)
+    // }))
+
     return result
 }

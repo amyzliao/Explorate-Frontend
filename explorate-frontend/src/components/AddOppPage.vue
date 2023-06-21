@@ -37,7 +37,7 @@ export default {
     methods: {
         async addOpp() {
             // console.log("addOpp called")
-            let result = await dbCreate('opportunities', {
+            let result = dbCreate('opportunities', {
                 name: this.name,
                 contact: this.contact,
                 title: this.title,

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { dbUpdate, dbGet } from '@/firebase.js'
+import { dbUpdate, dbGet } from '@/firebase'
 import HeaderMod from './HeaderMod.vue'
 import FooterMod from './FooterMod.vue'
 
