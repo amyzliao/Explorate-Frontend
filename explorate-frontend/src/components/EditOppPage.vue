@@ -1,5 +1,5 @@
 <template>
-    <HeaderMod/>
+    <HeaderModVolunteer/>
     <h1>Edit opportunity</h1>
     <div class="form">
         <input type="text" name="name" v-model="opp.name" placeholder="NGO Name" />
@@ -15,13 +15,13 @@
 
 <script>
 import { dbUpdate, dbGet } from '@/firebase'
-import HeaderMod from './HeaderMod.vue'
+import HeaderModVolunteer from './HeaderModVolunteer.vue'
 import FooterMod from './FooterMod.vue'
 
 export default {
     name: 'EditOppPage',
     components: {
-        HeaderMod,
+        HeaderModVolunteer,
         FooterMod
     },
     data() {

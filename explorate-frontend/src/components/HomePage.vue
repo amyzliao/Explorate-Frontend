@@ -1,5 +1,5 @@
 <template>
-    <HeaderMod />
+    <component :is="view"/>
     <div class="home">
         <div class="home-left">
             <h1>Global Connections<br>Driven by<br>Sustainable Impact</h1>
@@ -40,14 +40,29 @@
 </template>
 
 <script>
-import HeaderMod from './HeaderMod.vue'
+import HeaderModVolunteer from './HeaderModVolunteer.vue'
+import HeaderModNgo from './HeaderModNgo.vue'
+import HeaderModSignedOut from './HeaderModSignedOut.vue'
 import FooterMod from './FooterMod.vue'
 
 export default {
     name: 'HomePage',
     components: {
-        HeaderMod,
-        FooterMod
+        HeaderModVolunteer,
+        HeaderModNgo,
+        FooterMod,
+        HeaderModSignedOut
+    },
+    computed: {
+        view() {
+            let user = localStorage.getItem("user-info");
+            if (user) {
+                const name = JSON.parse(user).account;
+                return name == 'volunteer' ? 'HeaderModVolunteer' : 'HeaderModNgo'
+            } else {
+                return 'HeaderModSignedOut'
+            }
+        }
     }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <HeaderMod />
+    <HeaderModVolunteer />
     <div class="signin">
         <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
         <h1>Sign In</h1>
@@ -16,7 +16,7 @@
 <script>
 // import { query, where, collection } from 'firebase/firestore'
 import { dbGetUser } from '@/firebase'
-import HeaderMod from './HeaderMod.vue'
+import HeaderModVolunteer from './HeaderModVolunteer.vue'
 import FooterMod from './FooterMod.vue'
 export default {
     name: 'SignIn',
@@ -27,16 +27,16 @@ export default {
         }
     },
     components: {
-        HeaderMod,
+        HeaderModVolunteer,
         FooterMod
     },
     methods: {
         async login() {
-            let result = dbGetUser('users', this.email, this.password).then((res) => {
+            let result = dbGetUser(this.email, this.password).then((res) => {
                 const user = res.docs[0].data()
 
                 if (user) {
-                    console.log(res.docs[0].data())
+                    // console.log(res.docs[0].data())
                     localStorage.setItem("user-info", JSON.stringify(res.docs[0].data()))
                     this.$router.push({name: 'HomePage'})
                 }
@@ -44,7 +44,6 @@ export default {
             }).catch((error) => {
                 console.log(error)
             })
-            // console.log(result)
             if (result.value) {
                 localStorage.setItem("user-info", this.email)
                 this.$router.push({name: 'HomePage'})
