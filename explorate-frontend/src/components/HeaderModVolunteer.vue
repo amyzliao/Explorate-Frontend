@@ -4,16 +4,15 @@
         <button class="signupbutton" v-on:click="this.$router.push('/signup')">Sign Up</button>
         <button class="signinbutton" v-on:click="this.$router.push('/signin')">Sign In</button>
         <router-link to="/database">Database (temp)</router-link>
-        <!-- <router-link to="/about">About Us</router-link> -->
         <router-link to="/">About Us</router-link>
         <router-link to="/resources">NGO Partner</router-link>
-        <router-link to="/">Volunteer</router-link>
+        <router-link to="/about">Volunteer Signed In</router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'HeaderMod',
+    name: 'HeaderModVolunteer'
 }
 </script>
 

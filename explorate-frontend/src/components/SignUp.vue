@@ -1,5 +1,5 @@
 <template>
-    <HeaderMod />
+    <HeaderModVolunteer />
         <div class="signup">
             <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
             <h1>Sign Up</h1>
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import { dbCreate } from '@/firebase';
+import { dbCreate, dbGetUser } from '@/firebase';
 import FooterMod from './FooterMod.vue';
-import HeaderMod from './HeaderMod.vue';
+import HeaderModVolunteer from './HeaderModVolunteer.vue';
 export default {
     name: 'SignUp',
     data() {
@@ -28,7 +28,7 @@ export default {
         }
     },
     components: {
-        HeaderMod,
+        HeaderModVolunteer,
         FooterMod
     },
     methods: {
@@ -40,6 +40,14 @@ export default {
             account: this.account})
 
             if (result == 201) {
+                dbGetUser(this.email, this.password).then((res) => {
+                    let userId = res.docs[0].id
+                    // console.log(userId)
+                    dbCreate('volunteers', 
+                    {uid: userId,
+                    name: this.name,
+                    contact: this.email})
+                })
                 this.$router.push({name:'HomePage'});
             }
         }

@@ -1,5 +1,5 @@
 <template>
-    <HeaderMod/>
+    <HeaderModVolunteer/>
     <h1>Add a new program to the database</h1>
     <div class="form">
         <input type="text" name="name" v-model="name" placeholder="NGO Name" />
@@ -15,13 +15,13 @@
 
 <script>
 import { dbCreate } from '@/firebase'
-import HeaderMod from './HeaderMod.vue'
+import HeaderModVolunteer from './HeaderModVolunteer.vue'
 import FooterMod from './FooterMod.vue'
 
 export default {
     name: 'AddOppPage',
     components: {
-        HeaderMod,
+        HeaderModVolunteer,
         FooterMod
     },
     data() {
