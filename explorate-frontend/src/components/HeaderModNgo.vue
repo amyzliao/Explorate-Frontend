@@ -1,8 +1,7 @@
 <template>
     <div class="nav">
         <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
-        <button class="signupbutton" v-on:click="this.$router.push('/signup')">Sign Up</button>
-        <button class="signinbutton" v-on:click="this.$router.push('/signin')">Sign In</button>
+        <button class="logout" v-on:click="logout">Logout</button>
         <router-link to="/database">Database (temp)</router-link>
         <router-link to="/">About Us</router-link>
         <router-link to="/resources">NGO Partner</router-link>
@@ -11,8 +10,21 @@
 </template>
 
 <script>
+import { userID, googleSignOut } from '@/firebase'
 export default {
-    name: 'HeaderModNgo'
+    name: 'HeaderModNgo',
+    methods: {
+        logout() {
+            const googleUID = userID()
+
+            if (googleUID) {
+                googleSignOut()
+            }
+
+            localStorage.clear();
+            this.$router.push({name: 'SignInPage'})
+        }
+    }
 }
 </script>
 
@@ -62,24 +74,5 @@ export default {
 
 .signupbutton:hover {
     background-color: #414141;
-}
-
-.signinbutton {
-    float: right;
-    text-decoration: none;
-    padding: 20px;
-    background-color: white;
-    color: #212121;
-    margin-left: 20px;
-}
-
-.signupbutton {
-    float: right;
-    text-decoration: none;
-    padding: 20px;
-    background-color: #212121;
-    color: white;
-    margin-left: 15px;
-    margin-right: 20px;
 }
 </style>

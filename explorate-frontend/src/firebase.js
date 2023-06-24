@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
 
 import { ref, onUnmounted } from 'vue'
 
@@ -14,7 +15,7 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
-export const db = firebase.firestore();
+const db = firebase.firestore();
 
 export const dbCreate = (col, val) => {
     let result = 201
@@ -76,3 +77,23 @@ export const dbGetUser = (email, password) => {
 
     return result
 }
+
+
+export const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+
+    let result = firebase.auth().signInWithPopup(provider)
+
+    return result
+};
+
+export const userID = () => {
+    const user = firebase.auth().currentUser
+    
+    return user ? user.uid : null
+}
+
+export const googleSignOut = () => {
+    firebase.auth().signOut()
+}
+

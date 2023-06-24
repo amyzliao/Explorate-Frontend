@@ -1,5 +1,5 @@
 <template>
-    <HeaderModVolunteer />
+    <HeaderModSignedOut />
         <div class="signup">
             <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
             <h1>Sign Up</h1>
@@ -16,7 +16,7 @@
 <script>
 import { dbCreate, dbGetUser } from '@/firebase';
 import FooterMod from './FooterMod.vue';
-import HeaderModVolunteer from './HeaderModVolunteer.vue';
+import HeaderModSignedOut from './HeaderModSignedOut.vue';
 export default {
     name: 'SignUp',
     data() {
@@ -28,7 +28,7 @@ export default {
         }
     },
     components: {
-        HeaderModVolunteer,
+        HeaderModSignedOut,
         FooterMod
     },
     methods: {
