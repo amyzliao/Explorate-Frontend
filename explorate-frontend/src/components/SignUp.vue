@@ -3,7 +3,7 @@
         <div class="signup">
             <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
             <h1>Sign Up</h1>
-            <button class="google">Sign Up with Google</button>
+            <button class="google" v-on:click="googleSignUp">Sign Up with Google</button>
             <input type="text" placeholder="Full Name" v-model="name"/>
             <input type="text" placeholder="Email" v-model="email"/>
             <input type="password" placeholder="Password" v-model="password"/>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { dbCreate, dbGetUser } from '@/firebase';
+import { dbCreate, dbGetUser, signInWithGoogle } from '@/firebase';
 import FooterMod from './FooterMod.vue';
 import HeaderModSignedOut from './HeaderModSignedOut.vue';
 export default {
@@ -42,7 +42,6 @@ export default {
             if (result == 201) {
                 dbGetUser(this.email, this.password).then((res) => {
                     let userId = res.docs[0].id
-                    // console.log(userId)
                     dbCreate('volunteers', 
                     {uid: userId,
                     name: this.name,
@@ -50,6 +49,21 @@ export default {
                 })
                 this.$router.push({name:'HomePage'});
             }
+        },
+        googleSignUp() {
+            signInWithGoogle().then((result) => {
+                var user = result.user;
+
+                const uid = user.uid
+
+                if (user) {
+                    localStorage.setItem("user-info", JSON.stringify(uid))
+                    this.$router.push({name: 'HomePage'})
+                }
+
+                }).catch((error) => {
+                    console.log(error)
+                })
         }
     }
 }
