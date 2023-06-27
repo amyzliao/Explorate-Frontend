@@ -1,5 +1,5 @@
 <template>
-    <HeaderMod/>
+    <HeaderModVolunteer/>
     <h1>Add a new program to the database</h1>
     <div class="form">
         <input type="text" name="name" v-model="name" placeholder="NGO Name" />
@@ -14,14 +14,14 @@
 </template>
 
 <script>
-import { createOpp } from '@/firebase'
-import HeaderMod from './HeaderMod.vue'
+import { dbCreate } from '@/firebase'
+import HeaderModVolunteer from './HeaderModVolunteer.vue'
 import FooterMod from './FooterMod.vue'
 
 export default {
     name: 'AddOppPage',
     components: {
-        HeaderMod,
+        HeaderModVolunteer,
         FooterMod
     },
     data() {
@@ -37,7 +37,7 @@ export default {
     methods: {
         async addOpp() {
             // console.log("addOpp called")
-            let result = await createOpp({
+            let result = dbCreate('opportunities', {
                 name: this.name,
                 contact: this.contact,
                 title: this.title,

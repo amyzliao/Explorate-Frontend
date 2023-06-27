@@ -1,5 +1,5 @@
 <template>
-    <HeaderMod />
+    <component :is="view" />
     <h1>Resource Page</h1>
     <div class="resource">
         <div class="resource-left">
@@ -55,14 +55,29 @@
 </template>
 
 <script>
-import HeaderMod from './HeaderMod.vue'
+import HeaderModVolunteer from './HeaderModVolunteer.vue'
+import HeaderModNgo from './HeaderModNgo.vue'
+import HeaderModSignedOut from './HeaderModSignedOut.vue'
 import FooterMod from './FooterMod.vue'
 
 export default {
     name: 'PartnerPage',
     components: {
-        HeaderMod,
-        FooterMod
+        HeaderModVolunteer,
+        HeaderModNgo,
+        FooterMod,
+        HeaderModSignedOut
+    },
+    computed: {
+        view() {
+            let user = localStorage.getItem("user-info");
+            if (user) {
+                const name = JSON.parse(user).account;
+                return name == 'volunteer' ? 'HeaderModVolunteer' : 'HeaderModNgo'
+            } else {
+                return 'HeaderModSignedOut'
+            }
+        }
     }
 }
 </script>

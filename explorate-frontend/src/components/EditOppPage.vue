@@ -1,5 +1,5 @@
 <template>
-    <HeaderMod/>
+    <HeaderModVolunteer/>
     <h1>Edit opportunity</h1>
     <div class="form">
         <input type="text" name="name" v-model="opp.name" placeholder="NGO Name" />
@@ -14,14 +14,14 @@
 </template>
 
 <script>
-import { updateOpp, getOpp } from '@/firebase'
-import HeaderMod from './HeaderMod.vue'
+import { dbUpdate, dbGet } from '@/firebase'
+import HeaderModVolunteer from './HeaderModVolunteer.vue'
 import FooterMod from './FooterMod.vue'
 
 export default {
     name: 'EditOppPage',
     components: {
-        HeaderMod,
+        HeaderModVolunteer,
         FooterMod
     },
     data() {
@@ -41,7 +41,7 @@ export default {
         async editOpp() {
             console.log("editOpp called")
             console.log(this.opp)
-            let result = await updateOpp(this.oppId, {
+            let result = await dbUpdate('opportunities', this.oppId, {
                 name: this.opp.name,
                 contact: this.opp.contact,
                 title: this.opp.title,
@@ -58,7 +58,7 @@ export default {
     },
     async mounted() {
         this.oppId = this.$route.params.id
-        let result = await getOpp(this.oppId)
+        let result = await dbGet('opportunities', this.oppId)
         this.opp = result
         console.log(this.opp)
     }

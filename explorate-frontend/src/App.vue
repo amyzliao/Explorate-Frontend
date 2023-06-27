@@ -169,4 +169,14 @@ body {
     background-color: #e7513f;
     color: white;
 }
+
+.logout {
+    float: right;
+    text-decoration: none;
+    padding: 20px;
+    background-color: #212121;
+    color: white;
+    margin-left: 15px;
+    margin-right: 20px;
+}
 </style>

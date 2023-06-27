@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app";
 import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
 
 import { ref, onUnmounted } from 'vue'
 
@@ -13,51 +14,42 @@ const firebaseConfig = {
     measurementId: "G-J2TTKWCT5P"
   };
 
-// firebase.initializeApp(firebaseConfig);
-// const db = firebase.firestore();
-const app = firebase.initializeApp(firebaseConfig);
-const db = app.firestore();
-const oppCollection = db.collection('opportunities')
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-export const createOpp = opp => {
-    console.log(opp)
+export const dbCreate = (col, val) => {
     let result = 201
-    oppCollection.add(opp)
-        .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id)
-        })
-        .catch((error) => {
-            console.error("Error adding document: ", error)
-            result = 301
-        });
+    db.collection(col).add(val).then((docRef) => {
+        console.log("Document written with ID: ", docRef.id)
+    }).catch((error) => {
+        console.error("Error adding document: ", error)
+        result = 301
+    });
+
+    return result;
+}
+
+export const dbGet = async (col, id) => {
+    const result = await db.collection(col).doc(id).get()
+    return result.exists ? result.data() : null
+}
+
+export const dbUpdate = (col, id, val) => {
+    let result = 200
+    db.collection(col).doc(id).update(val).then(() => {
+        console.log("Successful update")
+    })
+    .catch((error) => {
+        console.error("Error editing document: ", error)
+        result = 300
+    });
+
     return result
 }
 
-export const getOpp = async id => {
-    const opp = await oppCollection.doc(id).get()
-    return opp.exists ? opp.data() : null
-}
-
-export const updateOpp = (id, opp) => {
-    console.log("updateOpp")
-    console.log(opp)
-    console.log(id)
+export const dbDelete = (col, id) => {
     let result = 200
-    oppCollection.doc(id).update(opp)
-        .then(() => {
-            console.log("Successful update")
-        })
-        .catch((error) => {
-            console.error("Error editing document: ", error)
-            result = 300
-        });
-    return result
-}
-
-export const deleteOpp = id => {
-    console.log(id)
-    let result = 200
-    oppCollection.doc(id).delete()
+    db.collection(col).doc(id).delete()
         .then(() => {
             console.log("Successful deletion")
         })
@@ -68,11 +60,40 @@ export const deleteOpp = id => {
     return result
 }
 
-export const useLoadOpps = () => {
-    const opps = ref([])
-    const close = oppCollection.onSnapshot(snapshot => {
-        opps.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+export const dbUseLoad = col => {
+    const result = ref([])
+    const close = db.collection(col).orderBy('name', 'asc').onSnapshot(snapshot => {
+        result.value = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }))
     })
     onUnmounted(close)
-    return opps
+    return result
 }
+
+export const dbGetUser = (email, password) => {
+    let result = db.collection('users').where("contact", "==", email).where("password", "==", password).get()
+
+    return result
+}
+
+
+export const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+
+    let result = firebase.auth().signInWithPopup(provider)
+
+    return result
+};
+
+export const userID = () => {
+    const user = firebase.auth().currentUser
+    
+    return user ? user.uid : null
+}
+
+export const googleSignOut = () => {
+    firebase.auth().signOut()
+}
+
