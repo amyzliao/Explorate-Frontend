@@ -7,7 +7,7 @@
             <td>Description</td>
             <td>Location</td>
             <td>Website</td>
-            <td>Functions</td>
+            <td v-if="loggedIn()">Functions</td>
         </tr>
         <tr v-for="opp in oppCollection" :key="opp.id">
             <td>{{ opp.name }}</td>
@@ -16,8 +16,9 @@
             <td>{{ opp.description }}</td>
             <td>{{ opp.location }}</td>
             <td>{{ opp.website }}</td>
-            <td>
-                <router-link :to="'/edit/'+opp.id">Edit</router-link>
+            <td v-if="loggedIn()">
+                <button v-on:click="goToEdit(opp.id)">Edit</button>
+                <br/>
                 <button v-on:click="deleteThisOpp(opp.id)">Delete</button>
             </td>
         </tr>
@@ -46,6 +47,14 @@ export default {
             if (result == 200) {
                 this.loadData()
             }
+        },
+        goToEdit(id) {
+            const path = "edit/" + id
+            this.$router.push(path)
+        },
+        loggedIn() {
+            const user = localStorage.getItem("user-info")
+            return user != null
         }
     },
     async mounted() {
@@ -64,5 +73,10 @@ td {
 }
 .col-title {
     color: blue;
+}
+
+td button {
+    width: 60px;
+    text-align: center;
 }
 </style>

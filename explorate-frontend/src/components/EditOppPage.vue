@@ -39,9 +39,7 @@ export default {
     },
     methods: {
         async editOpp() {
-            console.log("editOpp called")
-            console.log(this.opp)
-            let result = await dbUpdate('opportunities', this.oppId, {
+            let result = dbUpdate('opportunities', this.oppId, {
                 name: this.opp.name,
                 contact: this.opp.contact,
                 title: this.opp.title,
@@ -53,7 +51,6 @@ export default {
             if (result == 200) {
                 this.$router.push({name:'DatabasePage'});
             }
-            // else popup?
         }
     },
     async mounted() {

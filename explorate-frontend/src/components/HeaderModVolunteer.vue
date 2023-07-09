@@ -2,7 +2,7 @@
     <div class="nav">
         <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
         <button class="logout" v-on:click="logout">Logout</button>
-        <router-link to="/database">Database (temp)</router-link>
+        <router-link to="/database">Database</router-link>
         <router-link to="/">About Us</router-link>
         <router-link to="/resources">NGO Partner</router-link>
         <router-link to="/about">Volunteer Signed In</router-link>

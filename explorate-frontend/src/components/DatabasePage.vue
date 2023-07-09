@@ -1,7 +1,8 @@
 <template>
     <component :is="view" />
     <h1>Database Page</h1>
-    <router-link to="/add">Add a new opportunity</router-link>
+    <!-- <router-link to="/add">Add a new opportunity</router-link> -->
+    <button v-on:click="goToAdd()" v-if="loggedIn()">Add a new opportunity</button>
     <DatabaseMod />
     <FooterMod />
 </template>
@@ -31,6 +32,15 @@ export default {
             } else {
                 return 'HeaderModSignedOut'
             }
+        }
+    },
+    methods: {
+        goToAdd() {
+            this.$router.push({name: "AddOppPage"})
+        },
+        loggedIn() {
+            const user = localStorage.getItem("user-info")
+            return user != null
         }
     }
 }
