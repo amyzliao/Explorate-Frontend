@@ -15,8 +15,8 @@
 
 <script>
 import { dbUpdate, dbGet } from '@/firebase'
-import HeaderModVolunteer from './HeaderModVolunteer.vue'
-import FooterMod from './FooterMod.vue'
+import HeaderModVolunteer from '../HeaderModVolunteer.vue'
+import FooterMod from '../FooterMod.vue'
 
 export default {
     name: 'EditOppPage',

@@ -15,8 +15,8 @@
 
 <script>
 import { dbCreate } from '@/firebase'
-import HeaderModVolunteer from './HeaderModVolunteer.vue'
-import FooterMod from './FooterMod.vue'
+import HeaderModVolunteer from '../HeaderModVolunteer.vue'
+import FooterMod from '../FooterMod.vue'
 
 export default {
     name: 'AddOppPage',

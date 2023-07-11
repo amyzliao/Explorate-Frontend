@@ -69,6 +69,7 @@ export const dbUseLoad = col => {
         }))
     })
     onUnmounted(close)
+    console.log(result)
     return result
 }
 
@@ -89,8 +90,26 @@ export const signInWithGoogle = () => {
 
 export const userID = () => {
     const user = firebase.auth().currentUser
-    
+    console.log(user.uid)
     return user ? user.uid : null
+}
+
+export const userName = () => {
+    const user = firebase.auth().currentUser
+    console.log(user.displayName)
+    return user ? user.displayName : null
+}
+
+export const userImg = () => {
+    const user = firebase.auth().currentUser
+    console.log(user.photoURL)
+    return user ? user.photoURL : null
+}
+
+export const userEmail = () => {
+    const user = firebase.auth().currentUser
+    console.log(user.email)
+    return user ? user.email : null
 }
 
 export const googleSignOut = () => {
