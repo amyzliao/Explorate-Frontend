@@ -14,10 +14,17 @@
 </template>
 
 <script>
+<<<<<<< HEAD:explorate-frontend/src/components/EditOppPage.vue
 import { dbUpdate } from '@/firebase'
 import HeaderModVolunteer from './HeaderModVolunteer.vue'
 import FooterMod from './FooterMod.vue'
 import axios from 'axios';
+=======
+import { dbUpdate, dbGet } from '@/firebase'
+import HeaderModVolunteer from '../HeaderModVolunteer.vue'
+import FooterMod from '../FooterMod.vue'
+
+>>>>>>> 21d6eb17ad94e01ea88264cc27a97ddec23f71d4:explorate-frontend/src/components/database/EditOppPage.vue
 export default {
     name: 'EditOppPage',
     components: {

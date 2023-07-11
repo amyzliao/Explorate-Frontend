@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import '@/assets/css/main.css' // (@ in vue points to src/)
 // import HomePage from './components/HomePage.vue'
 // import TestPage from './components/TestPage.vue'
 // import AboutPage from './components/AboutPage.vue'

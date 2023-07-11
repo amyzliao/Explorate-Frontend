@@ -1,12 +1,12 @@
 <script>
-// import HeaderModVolunteer from './HeaderModVolunteer.vue'
-// import HeaderModNgo from './HeaderModNgo.vue'
+// import HeaderModVolunteer from '../HeaderModVolunteer.vue'
+// import HeaderModNgo from '../HeaderModNgo.vue'
 // import HeaderModSignedOut from './HeaderModSignedOut.vue'
-import HeaderMod from './header/HeaderMod.vue'
-import FooterMod from './FooterMod.vue'
+import HeaderMod from '../header/HeaderMod.vue'
+import FooterMod from '../FooterMod.vue'
 
 export default {
-    name: 'AboutPage',
+    name: 'VolunteerProfilePage',
     components: {
         FooterMod,
         HeaderMod
@@ -26,11 +26,11 @@ export default {
 </script>
 
 <template>
-    <HeaderMod />
+    <HeaderMod/>
     <!-- block A:  -->
     <h1
         class="mt-44 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        About Page</h1>
+        Volunteer Profile Page</h1>
     <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we
         focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
     <a href="#"
@@ -77,7 +77,7 @@ export default {
         </div>
     </div>
     <!-- block C: image -->
-    <img class="h-auto max-w-lg rounded-lg mx-auto mt-16" src="../assets/picking_up_trash.jpg" alt="image description">
+    <img class="h-auto max-w-lg rounded-lg mx-auto mt-16" src="../../assets/picking_up_trash.jpg" alt="image description">
     <!-- block D: quote -->
     <figure class="max-w-screen-md mx-auto text-center mt-16 mb-16">
         <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true"
