@@ -3,7 +3,7 @@
         <img class="logo" src="../assets/-Insert_image_here-.svg.png"/>
         <button class="signupbutton" v-on:click="this.$router.push('/signup')">Sign Up</button>
         <button class="signinbutton" v-on:click="this.$router.push('/signin')">Sign In</button>
-        <router-link to="/database">Database (temp)</router-link>
+        <router-link to="/database">Database</router-link>
         <router-link to="/">About Us</router-link>
         <router-link to="/about">Signed Out</router-link>
     </div>
