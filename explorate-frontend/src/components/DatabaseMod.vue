@@ -9,24 +9,27 @@
             <td>Website</td>
             <td v-if="loggedIn()">Functions</td>
         </tr>
-        <tr v-for="opp in oppCollection" :key="opp.id">
-            <td>{{ opp.name }}</td>
-            <td>{{ opp.contact }}</td>
-            <td>{{ opp.title }}</td>
-            <td>{{ opp.description }}</td>
-            <td>{{ opp.location }}</td>
-            <td>{{ opp.website }}</td>
+        <tr v-for="opp in oppCollection" :key="opp.Org_ID">
+            <td>{{ opp.Org_name.String }}</td>
+            <td>{{ opp.Contact.String }}</td>
+            <td>{{ opp.Impact_space.String }}</td>
+            <td>{{ opp.Mission_statement.String }}</td>
+            <td>{{ opp.Org_location.String }}</td>
+            <td>{{ opp.Website.String }}</td>
             <td v-if="loggedIn()">
-                <button v-on:click="goToEdit(opp.id)">Edit</button>
+                <button v-on:click="goToEdit(opp.Org_ID)">Edit</button>
                 <br/>
                 <button v-on:click="deleteThisOpp(opp.id)">Delete</button>
             </td>
+            <!-- <h1>oppcollection</h1>
+                <p>{{ oppCollection }}</p> -->
         </tr>
     </table>
 </template>
 
 <script>
-import { dbUseLoad, dbDelete } from '@/firebase'
+import { dbDelete } from '@/firebase';
+import axios from 'axios';
 
 export default {
     name: 'DatabaseMod',
@@ -36,9 +39,10 @@ export default {
         }
     },
     methods: {
-        loadData() {
-            let result = dbUseLoad('opportunities')
-            this.oppCollection = result
+        async loadData() {
+            // let result = dbUseLoad('opportunities')
+            let result = await axios.get("http://localhost:3000/ngo_opps")
+            this.oppCollection = result.data
             console.warn(this.oppCollection)
         },
         deleteThisOpp(id) {

@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import { dbUpdate, dbGet } from '@/firebase'
+import { dbUpdate } from '@/firebase'
 import HeaderModVolunteer from './HeaderModVolunteer.vue'
 import FooterMod from './FooterMod.vue'
-
+import axios from 'axios';
 export default {
     name: 'EditOppPage',
     components: {
@@ -55,8 +55,12 @@ export default {
     },
     async mounted() {
         this.oppId = this.$route.params.id
-        let result = await dbGet('opportunities', this.oppId)
+        // console.log(this.oppId)
+        // let result = await dbGet('opportunities', this.oppId)
+        let result = await axios.get("http://localhost:3000/ngo_opps/"+this.oppId)
+        // console.log("works")
         this.opp = result
+        // this.opp.name = result.ID
         console.log(this.opp)
     }
 }
