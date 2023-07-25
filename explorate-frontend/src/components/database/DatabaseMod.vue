@@ -1,6 +1,7 @@
 <script>
 import { dbUseLoad, dbDelete } from '@/firebase'
 import DatabaseCard from './DatabaseCard.vue'
+import axios from 'axios'
 
 export default {
     name: 'DatabaseMod',
@@ -25,10 +26,18 @@ export default {
             if (result == 200) {
                 this.loadData()
             }
+        },
+        async loadLocal() {
+            let result = await axios.get('http://localhost:3000/ngo_opps')
+            console.log(result)
+            this.oppCollection = result.data
+            console.log(this.oppCollection)
+            // console.log(result[0])
         }
     },
     async mounted() {
-        this.loadData()
+        // this.loadData()
+        this.loadLocal()
     }
 }
 </script>
@@ -48,8 +57,8 @@ export default {
             </div>
             <!-- column for displaying cards -->
             <div class="basis-3/4 bg-gray-50 grid grid-cols-3 gap-5">
-                <div v-for="opp in oppCollection" :key="opp.id">
-                    <DatabaseCard :name="opp.name" :location="opp.location" :mission="opp.description" :projects="opp.contact" :link="opp.website" />
+                <div v-for="opp in oppCollection" :key="opp.Org_ID">
+                    <DatabaseCard :name="opp.Org_name.String" :location="opp.Org_location.String" :mission="opp.Mission_statement.String" :projects="opp.Projects.String" :link="opp.Website.String" />
                 </div>
             </div>
         </div>
@@ -66,13 +75,13 @@ export default {
             <td>Website</td>
             <td>Functions</td>
         </tr>
-        <tr v-for="opp in oppCollection" :key="opp.id">
-            <td>{{ opp.name }}</td>
-            <td>{{ opp.contact }}</td>
-            <td>{{ opp.title }}</td>
-            <td>{{ opp.description }}</td>
-            <td>{{ opp.location }}</td>
-            <td>{{ opp.website }}</td>
+        <tr v-for="opp in oppCollection" :key="opp.Org_ID">
+            <td>{{ opp.Org_name.String }}</td>
+            <td>{{ opp.Contact.String }}</td>
+            <td>{{ opp.Impact_space.String }}</td>
+            <td>{{ opp.Mission_statement.String }}</td>
+            <td>{{ opp.Org_location.String }}</td>
+            <td>{{ opp.Website.String }}</td>
             <td>
                 <router-link :to="'/database/edit/' + opp.id">Edit</router-link>
                 <button v-on:click="deleteThisOpp(opp.id)">Delete</button>

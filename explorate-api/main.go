@@ -31,9 +31,9 @@ func main() {
 		c.Next()
 	})
 
-	router.GET("/ngo_opps", controllers.GetAll(conn, "ngo_opps"))
-	router.GET("/ngo_opps/:id", controllers.Find(conn, "ngo_opps"))
-	router.POST("/ngo_opps", controllers.Insert(conn, "ngo_opps"))
-	router.DELETE("/ngo_opps/:id", controllers.Delete(conn, "ngo_opps"))
+	router.GET("/ngo_opps", controllers.GetAll(conn, "ngo_opps")) //get all
+	router.GET("/ngo_opps/:id", controllers.Find(conn, "ngo_opps")) //get one
+	router.POST("/ngo_opps", controllers.Insert(conn, "ngo_opps")) //add new
+	router.DELETE("/ngo_opps/:id", controllers.Delete(conn, "ngo_opps")) //delete
 	router.Run(":3000")
 }
