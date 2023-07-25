@@ -3,7 +3,7 @@ package models
 import "database/sql"
 
 type Ngo_opp struct {
-	Org_ID                   int
+	ID                       int
 	Org_name                 sql.NullString
 	Org_location             sql.NullString
 	Mission_statement        sql.NullString

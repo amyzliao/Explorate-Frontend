@@ -35,5 +35,6 @@ func main() {
 	router.GET("/ngo_opps/:id", controllers.Find(conn, "ngo_opps"))
 	router.POST("/ngo_opps", controllers.Insert(conn, "ngo_opps"))
 	router.DELETE("/ngo_opps/:id", controllers.Delete(conn, "ngo_opps"))
+	router.PATCH("/ngo_opps/:id", controllers.Update(conn, "ngo_opps"))
 	router.Run(":3000")
 }

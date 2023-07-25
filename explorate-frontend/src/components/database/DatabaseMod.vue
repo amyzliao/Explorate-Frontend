@@ -1,38 +1,3 @@
-<script>
-import { dbUseLoad, dbDelete } from '@/firebase'
-import DatabaseCard from './DatabaseCard.vue'
-
-export default {
-    name: 'DatabaseMod',
-    components: {
-        DatabaseCard
-    },
-    data() {
-        return {
-            oppCollection: []
-        }
-    },
-    methods: {
-        loadData() {
-            let result = dbUseLoad('opportunities')
-            this.oppCollection = result
-            console.log('load data')
-            console.warn(this.oppCollection.ownkeys)
-        },
-        deleteThisOpp(id) {
-            let result = dbDelete('opportunities', id)
-            console.warn(result)
-            if (result == 200) {
-                this.loadData()
-            }
-        }
-    },
-    async mounted() {
-        this.loadData()
-    }
-}
-</script>
-
 <template>
     <div class="mx-10 mt-6">
         <div class="flex flex-row gap-5">
@@ -48,8 +13,8 @@ export default {
             </div>
             <!-- column for displaying cards -->
             <div class="basis-3/4 bg-gray-50 grid grid-cols-3 gap-5">
-                <div v-for="opp in oppCollection" :key="opp.id">
-                    <DatabaseCard :name="opp.name" :location="opp.location" :mission="opp.description" :projects="opp.contact" :link="opp.website" />
+                <div v-for="opp in oppCollection" :key="opp.ID">
+                    <DatabaseCard :name="opp.Org_name.String" :location="opp.Org_location.String" :mission="opp.Impact_space.String" :projects="opp.Projects.String" :link="opp.Website.String" />
                 </div>
             </div>
         </div>
@@ -66,22 +31,56 @@ export default {
             <td>Website</td>
             <td>Functions</td>
         </tr>
-        <tr v-for="opp in oppCollection" :key="opp.id">
-            <td>{{ opp.name }}</td>
-            <td>{{ opp.contact }}</td>
-            <td>{{ opp.title }}</td>
-            <td>{{ opp.description }}</td>
-            <td>{{ opp.location }}</td>
-            <td>{{ opp.website }}</td>
+        <tr v-for="opp in oppCollection" :key="opp.ID">
+            <td>{{ opp.Org_name.String }}</td>
+            <td>{{ opp.Contact.String }}</td>
+            <td>{{ opp.Impact_space.String }}</td>
+            <td>{{ opp.Mission_statement.String }}</td>
+            <td>{{ opp.Org_location.String }}</td>
+            <td>{{ opp.Website.String }}</td>
             <td>
-                <router-link :to="'/database/edit/' + opp.id">Edit</router-link>
-                <button v-on:click="deleteThisOpp(opp.id)">Delete</button>
+                <router-link :to="'/database/edit/' + opp.ID">Edit</router-link>
+                <button v-on:click="deleteThisOpp(opp.ID)">Delete</button>
             </td>
         </tr>
     </table>
 </template>
 
+<script>
+import DatabaseCard from './DatabaseCard.vue'
+import axios from 'axios'
 
+export default {
+    name: 'DatabaseMod',
+    components: {
+        DatabaseCard
+    },
+    data() {
+        return {
+            oppCollection: []
+        }
+    },
+    methods: {
+        async loadData() {
+            let result = await axios.get("http://localhost:3000/ngo_opps")
+            this.oppCollection = result.data
+            console.log(this.oppCollection)
+        },
+        deleteThisOpp(id) {
+            let result = axios.delete("http://localhost:3000/ngo_opps/"+id)
+            console.warn(result)
+            if (result == 200) {
+                this.loadData()
+                location.reload()
+            }
+
+        }
+    },
+    mounted() {
+        this.loadData()
+    }
+}
+</script>
 
 <style>
 table {
@@ -95,5 +94,10 @@ td {
 
 .col-title {
     color: blue;
+}
+
+td button {
+    width: 60px;
+    text-align: center;
 }
 </style>

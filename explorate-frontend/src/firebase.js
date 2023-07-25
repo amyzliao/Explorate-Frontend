@@ -96,19 +96,19 @@ export const userID = () => {
 
 export const userName = () => {
     const user = firebase.auth().currentUser
-    console.log(user.displayName)
+    // console.log(user.displayName)
     return user ? user.displayName : null
 }
 
 export const userImg = () => {
     const user = firebase.auth().currentUser
-    console.log(user.photoURL)
+    // console.log(user.photoURL)
     return user ? user.photoURL : null
 }
 
 export const userEmail = () => {
     const user = firebase.auth().currentUser
-    console.log(user.email)
+    // console.log(user.email)
     return user ? user.email : null
 }
 
