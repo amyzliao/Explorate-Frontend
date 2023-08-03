@@ -1,0 +1,47 @@
+<template>
+    <component :is="view" />
+    <h1>Database Page</h1>
+    <!-- <router-link to="/add">Add a new opportunity</router-link> -->
+    <button v-on:click="goToAdd()" v-if="loggedIn()">Add a new opportunity</button>
+    <DatabaseMod />
+    <FooterMod />
+</template>
+
+<script>
+import HeaderModVolunteer from './HeaderModVolunteer.vue'
+import HeaderModNgo from './HeaderModNgo.vue';
+import HeaderModSignedOut from './HeaderModSignedOut.vue';
+import FooterMod from './FooterMod.vue'
+import DatabaseMod from './DatabaseMod.vue';
+
+export default {
+    name: 'DatabasePage',
+    components: {
+        HeaderModVolunteer,
+        FooterMod,
+        HeaderModNgo,
+        DatabaseMod,
+        HeaderModSignedOut
+    },
+    computed: {
+        view() {
+            let user = localStorage.getItem("user-info");
+            if (user) {
+                const name = JSON.parse(user).account;
+                return name == 'volunteer' ? 'HeaderModVolunteer' : 'HeaderModNgo'
+            } else {
+                return 'HeaderModSignedOut'
+            }
+        }
+    },
+    methods: {
+        goToAdd() {
+            this.$router.push({name: "AddOppPage"})
+        },
+        loggedIn() {
+            const user = localStorage.getItem("user-info")
+            return user != null
+        }
+    }
+}
+</script>

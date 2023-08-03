@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .big-form {
+        @apply mx-20 my-10 object-fill block;
+    }
+    .big-form input {
+        @apply block w-3/4 mx-auto flex text-lg border-4 my-5;
+    }
+}
