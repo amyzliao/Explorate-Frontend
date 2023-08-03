@@ -14,11 +14,3 @@ See `explorate-frontend`, `explorate-backend`, or `explorate-api` for specific s
 ## File System
 ### explorate-frontend
 All the frontend files and dependencies.
-
-### explorate-backend
-(empty)
-Everything related to the backend database.
-
-### explorate-api
-(empty)
-Backend API client deployment.
