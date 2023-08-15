@@ -28,14 +28,14 @@ export default {
 </script>
 
 <template>
-    <div class="w-full items-center p-4 flex justify-between bg-white dark:bg-gray-900 w-full top-0 left-0 dark:border-gray-600">
+    <div class="w-full items-center p-4 flex justify-between bg-white w-full top-0 left-0">
         <router-link :to="'/'">
             <img src="../../assets/explorate-logo.png" class="h-[102px]" alt="Explorate Logo">
         </router-link>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+        <div class="items-center justify-between flex w-auto">
             <component :is="view"/>
             <div id="navbar-dropdown">
-                <ul class="mx-6 flex items-center flex-col h-[102px] md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 gap-9">
+                <ul class="mx-6 flex items-center h-[102px] mt-4 font-medium rounded-lg bg-gray-50 flex-row space-x-8 mt-0 bg-white gap-9">
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
                             class="flex items-center justify-between w-full text-gray-900 rounded hover:bg-gray-100 font-bold">Volunteers
@@ -46,8 +46,8 @@ export default {
                             </svg></button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                            <ul class="py-2 text-gray-700" aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <router-link :to="'/database'"
                                         class="block px-4 py-2 hover:bg-primary_hover font-bold">Database</router-link>
