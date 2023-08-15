@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-    <div class="flex md:order-2 gap-1">
+    <div class="flex md:order-2 gap-1 px-12">
         <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName"
             class="flex h-9 bg-[#ffebcd] pr-3 items-center text-sm font-medium text-gray-900 rounded-full hover:bg-[#e1ba7e] md:mr-0 focus:bg-[#e1ba7e] dark:text-white"
             type="button">
@@ -41,7 +41,7 @@ export default {
             {{ username }}
             <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 10 6">
-                <path stroke="currentColor" stroke-linecap="roun    d" stroke-linejoin="round" stroke-width="2"
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="m1 1 4 4 4-4" />
             </svg>
         </button>

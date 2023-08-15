@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 @layer components {
     .big-form {
@@ -8,5 +9,12 @@
     }
     .big-form input {
         @apply block w-3/4 mx-auto flex text-lg border-4 my-5;
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: Quicksand;
+        src: url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap')
     }
 }

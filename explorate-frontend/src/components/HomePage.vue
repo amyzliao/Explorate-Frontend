@@ -15,32 +15,101 @@ export default {
 </script>
 
 <template>
-    <HeaderMod />
+    <HeaderMod/>
     <!-- block A:  -->
-    <h1
-        class="mt-44 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        Home Page</h1>
-    <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we
-        focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-    <a href="#"
-        class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-        Learn more
-        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9" />
-        </svg>
-    </a>
+    <h1 class="mt-[44px] text-[50px] font-bold text-[#323232]">Building A Global Community</h1>
+    <p class="text-[25px] font-medium text-[#DE5E56]">Through Empathy, Impact, and Cross-Cultural Impact</p>
+    <!-- Counter thing -->
+    <div class="flex justify-center w-[784px] mx-[580px] p-4 bg-[#CFCFCF] rounded-[30px] h-[137px] bg-opacity-[0.15] translate-y-5 shadow-2xl drop-shadow-md backdrop-blur-[20px]">
+        <div class="grid grid-cols-3 gap-24">
+            <div class="flex flex-col items-center justify-center">
+                <dt class="mb-2 text-5xl font-semibold text-[#5D90CD]">123+</dt>
+                <dd class="text-black text-[25px]">Volunteers</dd>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <dt class="mb-2 text-5xl font-semibold text-[#5D90CD]">23+</dt>
+                <dd class="text-black text-[25px]">NGOs</dd>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <dt class="mb-2 text-5xl font-semibold text-[#5D90CD]">12+</dt>
+                <dd class="text-black text-[25px]">Countries</dd>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image gallery -->
+    <div class="flex justify-center gap-[10px] mx-[77px] cursor-pointer">
+        <figure class="group static">
+            <img class="group rounded-[20px] justify-self-center group-hover:justify-self-center group-hover:w-[350px] transition-all duration-500 object-none w-[175px] h-[358px]" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/content-gallery-3.png" alt="default1">
+            <div class="absolute group group-hover:block group-hover:-translate-y-[66px] text-white hidden">
+                <p class="font-bold text-[20px] flex ml-[22px]">Organization name</p>
+                <p class="font-bold text-[15px] flex ml-[22px] underline">read more</p>
+            </div>
+        </figure>
+        <figure class="group static">
+            <img class="group rounded-[20px] justify-self-center group-hover:justify-self-center group-hover:w-[350px] transition-all duration-500 object-none w-[175px] h-[358px]" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="default2">
+            <div class="absolute group group-hover:block group-hover:-translate-y-[66px] text-white hidden">
+                <p class="font-bold text-[20px] flex ml-[22px]">Organization name</p>
+                <p class="font-bold text-[15px] flex ml-[22px] underline">read more</p>
+            </div>
+        </figure>
+        <div>
+            <figure class="group static">
+                <img class="group rounded-[20px] justify-self-center group-hover:justify-self-center group-hover:w-[350px] transition-all duration-500 object-none w-[175px] h-[358px]" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="default3">
+                <div class="absolute group group-hover:block group-hover:-translate-y-[66px] text-white hidden">
+                    <p class="font-bold text-[20px] flex ml-[22px]">Organization name</p>
+                    <p class="font-bold text-[15px] flex ml-[22px] underline">read more</p>
+                </div>
+            </figure>
+        </div>
+        <div>
+            <figure class="group static">
+                <img class="group rounded-[20px] justify-self-center group-hover:justify-self-center group-hover:w-[350px] transition-all duration-500 object-none w-[175px] h-[358px]" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="default4">
+                <div class="absolute group group-hover:block group-hover:-translate-y-[66px] text-white hidden">
+                    <p class="font-bold text-[20px] flex ml-[22px]">Organization name</p>
+                    <p class="font-bold text-[15px] flex ml-[22px] underline">read more</p>
+                </div>
+            </figure>
+        </div>
+        <div>
+            <figure class="group static">
+                <img class="group rounded-[20px] justify-self-center group-hover:justify-self-center group-hover:w-[350px] transition-all duration-500 object-none w-[175px] h-[358px]" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="default5">
+                <div class="absolute group group-hover:block group-hover:-translate-y-[66px] text-white hidden">
+                    <p class="font-bold text-[20px] flex ml-[22px]">Organization name</p>
+                    <p class="font-bold text-[15px] flex ml-[22px] underline">read more</p>
+                </div>
+            </figure>
+        </div>
+        <div>
+            <figure class="group static">
+                <img class="group rounded-[20px] justify-self-center group-hover:justify-self-center group-hover:w-[350px] transition-all duration-500 object-none w-[175px] h-[358px]" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt="default6">
+                <div class="absolute group group-hover:block group-hover:-translate-y-[66px] text-white hidden">
+                    <p class="font-bold text-[20px] flex ml-[22px]">Organization name</p>
+                    <p class="font-bold text-[15px] flex ml-[22px] underline">read more</p>
+                </div>
+            </figure>
+        </div>
+        <div>
+            <figure class="group static">
+                <img class="group rounded-[20px] justify-self-center group-hover:justify-self-center group-hover:w-[350px] transition-all duration-500 object-none w-[175px] h-[358px]" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="default7">
+                <div class="absolute group group-hover:block group-hover:-translate-y-[66px] text-white hidden">
+                    <p class="font-bold text-[20px] flex ml-[22px]">Organization name</p>
+                    <p class="font-bold text-[15px] flex ml-[22px] underline">read more</p>
+                </div>
+            </figure>
+        </div>
+    </div>
     <!-- block B: two cards, one for volunteers and other for ngos -->
-    <div class="flex items-center mx-auto w-[50%] mt-10">
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex items-center mx-auto mt-[73px] justify-center gap-5 my-6">
+        <div class="p-6 h-[238px] bg-white">
             <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">I'm a volunteer</h5>
+                <h5 class="mb-2 text-2xl font-bold text-[#E7513F] text-[45px] h-[56px]">I'm a Volunteer</h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                acquisitions of 2021 so far, in reverse chronological order.</p>
+            <p class="mb-3 text-black text-[25px] h-[86px]">Explore programs that resonate.<br>
+                Navigate with a global community.</p>
             <a href="#"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
+                class="inline-flex w-[420px] items-center justify-center px-[18px] py-3.5 text-[20px] font-bold text-center text-[#E7513F] bg-white border border-[#E7513F] rounded-[15px]">
+                Find a Program
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -48,15 +117,14 @@ export default {
                 </svg>
             </a>
         </div>
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-6 h-[238px] bg-white">
             <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">I'm a NGO</h5>
+                <h5 class="mb-2 text-2xl font-bold text-[#E7513F] text-[45px] h-[56px]">I'm a NGO</h5>
             </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                acquisitions of 2021 so far, in reverse chronological order.</p>
+            <p class="mb-3 text-black text-[25px] h-[86px]">Volunteer Coordination Streamlined.</p>
             <a href="#"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
+                class="inline-flex w-[420px] items-center justify-center px-[18px] py-3.5 text-[20px] font-bold text-center text-[#E7513F] bg-white border border-[#E7513F] rounded-[15px]">
+                Partner with Us
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -66,29 +134,29 @@ export default {
         </div>
     </div>
     <!-- block C: image -->
-    <img class="h-auto max-w-lg rounded-lg mx-auto mt-16" src="../assets/picking_up_trash.jpg" alt="image description">
-    <!-- block D: quote -->
-    <figure class="max-w-screen-md mx-auto text-center mt-16 mb-16">
-        <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-            <path
-                d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
-        </svg>
-        <blockquote>
-            <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons
-                of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your
-                next SaaS application."</p>
-        </blockquote>
-        <figcaption class="flex items-center justify-center mt-6 space-x-3">
-            <img class="w-6 h-6 rounded-full"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
-            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                <cite class="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</cite>
-                <cite class="pl-3 text-sm text-gray-500 dark:text-gray-400">CEO at Google</cite>
+    <img class="relative inline-flex" src="../assets/WhyExplorate.png" alt="Why Explorate">
+    <!-- Sponsors -->
+    <h1 class="font-medium text-4xl mt-12">Proudly Supported by</h1>
+    <img class="inline-flex mt-5 mb-12" src="../assets/sponsors.png" alt="sponsors">
+    <!-- Interested -->
+    <div class="relative inline-flex justify-center items-center">
+        <img class="inline" src="../assets/high-angle-people-world-map.png" alt="background interested">
+        <!-- Middle section -->
+        <div class="p-14 absolute bg-[#CFCFCF] drop-shadow-md bg-opacity-[0.15] grid grid-cols-1 justify-items-center w-[784px] h-[510px] rounded-[30px] backdrop-blur-[20px]">
+            <h1 class="text-[32px] text-center text-black">Interested?
+                <img src="../assets/pen_under_digital.png" alt="pen under digital">
+            </h1>
+            <h1 class="font-bold text-[45px] text-black w-[431px]">Join Explorate's Community Now!</h1>
+            <div class="flex gap-[55px]">
+                <a href="#" class="bg-[#E7513F] h-[56px] text-white border-2 border-[#E7513F] rounded-[15px] p-4 flex items-center">
+                    <p class="font-medium text-xl px-4">Sign Up for Free</p>
+                </a>
+                <a href="#" class="bg-[#E7513F] h-[56px] text-white border-2 border-[#E7513F] rounded-[15px] p-4 flex items-center">
+                    <p class="font-medium text-xl px-4">Log in</p>
+                    </a>
             </div>
-        </figcaption>
-    </figure>
-
+        </div>
+    </div>
     <FooterMod />
 </template>
 
