@@ -20,7 +20,7 @@ export default {
     <h1 class="mt-[44px] text-[50px] font-bold text-[#323232]">Building A Global Community</h1>
     <p class="text-[25px] font-medium text-[#DE5E56]">Through Empathy, Impact, and Cross-Cultural Impact</p>
     <!-- Counter thing -->
-    <div class="flex justify-center w-[784px] mx-[580px] p-4 bg-[#CFCFCF] rounded-[30px] h-[137px] bg-opacity-[0.15] translate-y-5 shadow-2xl drop-shadow-md backdrop-blur-[20px]">
+    <div class="inline-flex justify-center w-[784px] p-4 bg-[#CFCFCF] rounded-[30px] h-[137px] bg-opacity-[0.15] translate-y-5 shadow-2xl drop-shadow-md backdrop-blur-[20px]">
         <div class="grid grid-cols-3 gap-24">
             <div class="flex flex-col items-center justify-center">
                 <dt class="mb-2 text-5xl font-semibold text-[#5D90CD]">123+</dt>
@@ -137,7 +137,9 @@ export default {
     <img class="relative inline-flex" src="../assets/WhyExplorate.png" alt="Why Explorate">
     <!-- Sponsors -->
     <h1 class="font-medium text-4xl mt-12">Proudly Supported by</h1>
-    <img class="inline-flex mt-5 mb-12" src="../assets/sponsors.png" alt="sponsors">
+    <div class="flex justify-center mt-5 mb-12">
+        <img src="../assets/sponsors.png" alt="sponsors">
+    </div>
     <!-- Interested -->
     <div class="relative inline-flex justify-center items-center">
         <img class="inline" src="../assets/high-angle-people-world-map.png" alt="background interested">

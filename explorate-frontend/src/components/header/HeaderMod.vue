@@ -35,10 +35,10 @@ export default {
         <div class="items-center justify-between flex w-auto">
             <component :is="view"/>
             <div id="navbar-dropdown">
-                <ul class="mx-6 flex items-center h-[102px] mt-4 font-medium rounded-lg bg-gray-50 flex-row space-x-8 mt-0 bg-white gap-9">
+                <ul class="mx-6 flex items-center mt-4 rounded-lg flex-row space-x-8 mt-0 bg-white gap-9">
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="flex items-center justify-between w-full text-gray-900 rounded hover:bg-gray-100 font-bold">Volunteers
+                            class="flex items-center justify-between w-full text-black rounded hover:bg-gray-100 font-bold">Volunteers
                             <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -46,7 +46,7 @@ export default {
                             </svg></button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar"
-                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                             <ul class="py-2 text-gray-700" aria-labelledby="dropdownLargeButton">
                                 <li>
                                     <router-link :to="'/database'"
@@ -61,12 +61,12 @@ export default {
                     </li>
                     <li>
                         <router-link :to="'/partners'"
-                            class="block text-gray-900 rounded hover:bg-gray-100 font-bold">NGO
+                            class="block text-black rounded hover:bg-gray-100 font-bold">NGO
                             Partners</router-link>
                         </li>
                     <li>
                         <router-link :to="'/about'"
-                            class="block text-gray-900 rounded hover:bg-gray-100 font-bold">About
+                            class="block text-black rounded hover:bg-gray-100 font-bold">About
                             Us</router-link>
                     </li>
                 </ul>

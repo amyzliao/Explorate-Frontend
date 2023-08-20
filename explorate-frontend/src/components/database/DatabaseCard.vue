@@ -6,28 +6,32 @@ export default {
 </script>
 
 <template>
-    <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="bg-white border border-gray-200 rounded-xl shadow">
+        <!-- Title section -->
+        <a href="#">
+            <div class="h-[72px] flex items-center gap-4 py-3 pl-4 pr-1">
+                <!-- profile pic circle, just placeholder with first initial -->
+                <div class="h-10 w-10 bg-blue-400 rounded-full flex justify-center items-center text-white font-bold text-2xl">
+                    {{ name[0] }}
+                </div>
+                <!-- NGO name -->
+                <h1 class="font-bold text-[#1D1B20]">{{ name }}</h1>
+            </div>
+        </a>
+        <!-- image -->
         <a href="#">
             <img class="rounded-t-lg" src="../../assets/picking_up_trash.jpg" alt="" />
         </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{name}}</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{location}}</p>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{mission}}</p>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{projects}}</p>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{link}}</p>
-            <!-- learn more button -->
-            <!-- <a href="#"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
-                <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a> -->
+        <!-- info section -->
+        <div class="p-2">
+            <p class="mb-3 text-start line-clamp-3 h-[60px] text-sm">{{ mission }}</p>
+            <p class="text-start text-[14px] font-semibold h-6 my-1">{{ location }}</p>
+            <h2 class="text-start font-medium underline h-7">Projects</h2>
+            <p class="mb-3 font-normal text-start line-clamp-2 text-sm">{{ projects }}</p>
+            <div class="flex justify-end gap-2 m-4">
+                <div class="border rounded-[100px] py-2.5 px-6 font-medium text-[#5D90CD] border-[#79747E] text-sm">Save</div>
+                <div class="rounded-[100px] py-2.5 px-6 font-medium text-white bg-[#5D90CD] text-sm">Learn more</div>
+            </div>
         </div>
     </div>
 </template>
