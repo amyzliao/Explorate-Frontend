@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   mode: 'jit',
   content: ["./src/**/*.{html,js,vue}",
@@ -17,6 +18,8 @@ module.exports = {
     fontFamily: {
       sans: ['Optima', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
+      quicksand: ['Quicksand', 'san-serif'],
+      roboto: ['Roboto', 'san-serif']
     },
   },
   plugins: [

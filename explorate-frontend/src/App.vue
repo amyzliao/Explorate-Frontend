@@ -1,45 +1,33 @@
 <template>
   <router-view />
-  <!-- <TestPage/>
-  <HomePage/>
-  <DatabasePage/>
-  <ResourcePage/>
-  <AboutPage/> -->
 </template>
 
 <script>
 import '@/assets/css/main.css' // (@ in vue points to src/)
-// import HomePage from './components/HomePage.vue'
-// import TestPage from './components/TestPage.vue'
-// import AboutPage from './components/AboutPage.vue'
-// import DatabasePage from './components/DatabasePage.vue'
-// import ResourcePage from './components/ResourcePage.vue'
 
 export default {
   name: 'App',
   components: {
-    // HomePage
-    // AboutPage,
-    // TestPage,
-    // DatabasePage,
-    // ResourcePage
+
 }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @font-face {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  src: local("Inter"), url(./assets/fonts/Inter-VariableFont_slnt\,wght.ttf) format("truetype");
+  font-family: 'Quicksand', san-serif;
+  font-family: 'Roboto', san-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  font-family: "Inter";
+  font-family: "Quicksand";
 }
 
 body {
