@@ -150,12 +150,12 @@ export default {
     },
     methods: {
         async loadData() {
-            let result = await axios.get("http://localhost:3000/ngo_opps")
+            let result = await axios.get("https://unry0i0624.execute-api.us-east-2.amazonaws.com/prod/ngo_opps")
             this.oppCollection = result.data
             console.log(this.oppCollection)
         },
         deleteThisOpp(id) {
-            axios.delete("http://localhost:3000/ngo_opps/" + id).then(result => {
+            axios.delete("https://unry0i0624.execute-api.us-east-2.amazonaws.com/prod/ngo_opps" + id).then(result => {
                 console.warn(result)
                 if (result.status == 200){
                     this.loadData()

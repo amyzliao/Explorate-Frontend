@@ -108,8 +108,8 @@ export default {
             //     location: this.opp.location,
             //     website: this.opp.website
             // });
-            console.log("http://localhost:3000/ngo_opps/"+this.oppId)
-            await axios.patch("http://localhost:3000/ngo_opps/"+this.oppId, {
+            console.log("https://unry0i0624.execute-api.us-east-2.amazonaws.com/prod/ngo_opps"+this.oppId)
+            await axios.patch("https://unry0i0624.execute-api.us-east-2.amazonaws.com/prod/ngo_opps"+this.oppId, {
                     Org_name:                 this.opp.Org_name,
                     Org_location:             this.opp.Org_location,
                     Mission_statement:        this.opp.Mission_statement,
@@ -148,7 +148,7 @@ export default {
     },
     async mounted() {
         this.oppId = this.$route.params.id
-        let result = await axios.get("http://localhost:3000/ngo_opps/"+this.oppId)
+        let result = await axios.get("https://unry0i0624.execute-api.us-east-2.amazonaws.com/prod/ngo_opps"+this.oppId)
         const data = result.data
 
         this.opp.Org_name = data.Org_name.String

@@ -85,7 +85,7 @@ export default {
     },
     methods: {
         async addOpp() {
-            axios.post("http://localhost:3000/ngo_opps", {
+            await axios.post("https://unry0i0624.execute-api.us-east-2.amazonaws.com/prod/ngo_opps", {
                 // ID: parseInt(this.ID),
                 Org_name: this.org_name,
                 Org_location: this.org_location,
@@ -115,10 +115,12 @@ export default {
                 Program_duration: this.program_duration,
                 Project_timeframe: this.project_timeframe
             }).then(result => {
-                console.warn("result", result)
+                console.log("result", result)
                 if (result.status == 200) {
                     this.$router.push({ name: 'DatabasePage' });
                 }
+            }).catch((error) => {
+                console.warn(error)
             })
         }
     }
