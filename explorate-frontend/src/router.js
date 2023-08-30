@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 // pages
 import HomePage from './components/HomePage.vue'
 import DatabasePage from './components/database/DatabasePage.vue'
+import NGOInfoPage from './components/ngos/NGOInfoPage.vue'
 import VolunteerResourcesPage from './components/volunteers/VolunteerResourcesPage.vue'
 import VolunteerProfilePage from './components/volunteers/VolunteerProfilePage.vue'
 import PartnerPage from './components/ngos/PartnerPage.vue'
@@ -84,6 +85,11 @@ const routes=[
         name: 'EditOppPage',
         component: EditOppPage,
         path: '/database/edit/:id'
+    },
+    {
+        name: 'NGOInfoPage',
+        component: NGOInfoPage,
+        path: '/database/:id'
     },
     {
         name: 'TestT',
