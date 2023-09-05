@@ -1,7 +1,4 @@
 <script>
-// import HeaderModVolunteer from '../HeaderModVolunteer.vue'
-// import HeaderModNgo from '../HeaderModNgo.vue'
-// import HeaderModSignedOut from './HeaderModSignedOut.vue'
 import HeaderMod from '../header/HeaderMod.vue'
 import FooterMod from '../FooterMod.vue'
 
@@ -27,79 +24,94 @@ export default {
 
 <template>
     <HeaderMod/>
-    <!-- block A:  -->
-    <h1
-        class="mt-44 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        Partner Page</h1>
-    <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at Flowbite we
-        focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-    <a href="#"
-        class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
-        Learn more
-        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9" />
-        </svg>
-    </a>
-    <!-- block B: two cards, one for volunteers and other for ngos -->
-    <div class="flex items-center mx-auto w-[50%] mt-10">
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">I'm a volunteer</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                acquisitions of 2021 so far, in reverse chronological order.</p>
-            <a href="#"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
-                <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
-        </div>
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">I'm a NGO</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                acquisitions of 2021 so far, in reverse chronological order.</p>
-            <a href="#"
-                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
-                <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 14 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-            </a>
+    <div class="bg-[#E7513F] mx-11 rounded-[50px] h-[760px]">
+        <div class="grid grid-cols-2 h-full">
+            <div class="text-[#F2DFC1] text-[64px] flex items-center justify-start px-[150px]">
+                <div class="flex flex-col justify-start">
+                    <h1 class="w-[400px] font-bold text-left">
+                    Spread Your Mission to More Volunteers
+                    </h1>
+                    <p class="text-[32px] text-left">
+                        Volunteer coordination streamlined
+                    </p>
+                    <a href="#">
+                        <h1 class="bg-[#E9D1AD] text-black font-bold text-xl inline-block px-14 py-7 rounded-[47px]">
+                            Let's Connect
+                        </h1>
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="../../assets/turtle.png" alt="turtle pic">
+            </div>
         </div>
     </div>
-    <!-- block C: image -->
-    <img class="h-auto max-w-lg rounded-lg mx-auto mt-16" src="../../assets/picking_up_trash.jpg" alt="image description">
-    <!-- block D: quote -->
-    <figure class="max-w-screen-md mx-auto text-center mt-16 mb-16">
-        <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-            <path
-                d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
-        </svg>
-        <blockquote>
-            <p class="text-2xl italic font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons
-                of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your
-                next SaaS application."</p>
-        </blockquote>
-        <figcaption class="flex items-center justify-center mt-6 space-x-3">
-            <img class="w-6 h-6 rounded-full"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture">
-            <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                <cite class="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</cite>
-                <cite class="pl-3 text-sm text-gray-500 dark:text-gray-400">CEO at Google</cite>
+    <div class="flex flex-col justify-center mt-6">
+        <h1 class="font-bold text-[50px] w-[1020px] self-center">
+            Free up your capacity to generate impact on the ground
+        </h1>
+        <p class="text-[25px] w-[950px] self-center">
+            Explorate serves to be a solution to the disconnect between NGOs and volunteers. 
+            Let your impactful work be seen and reach reliable volunteers. Meet other NGOs working in your field from across the world. 
+        </p>
+    </div>
+    <div class="grid grid-cols-2 my-10 gap-[140px]">
+        <div class="flex justify-end items-center">
+            <img class="rounded-[20px]" src="../../assets/Photo.jpg" alt="background">
+        </div>
+        <div class="text-[22px] w-[440px] flex flex-col justify-between text-left h-[280px] self-center">
+            <p class="text-[#E7513F] font-bold">Access Universal Talents and Form Global Connections</p>
+            <p class="text-[#797979]">
+                Connect with people who resonate with your cause and other impact-driven organizations working in your field. 
+                Increase your exposure on a global level
+            </p>
+        </div>
+    </div>
+    <div class="grid grid-cols-3 my-10 ml-20">
+        <div class="w-[785px] h-[640px] bg-[#E9D1AD] bg-opacity-40 rounded-[50px] pl-[30px] flex flex-col justify-center">
+            <div class="w-[600px]">
+                <h1 class="font-bold text-[50px] text-[#242331] text-left">Let Us Bring Volunteers to Your Door</h1>
+                <div class="text-[#797979] text-[22px] text-left">
+                    <p class="my-5">Explorate is set out to facilitate impact driven programs that empower and bridge both parties.</p>
+                    <p class="mt-5">We build a database for you to feature your volunteer needs and implement filters to ensure that the opportunities are shared with the volunteers who align with your missions the most.</p>
+                </div>
             </div>
-        </figcaption>
-    </figure>
-
+        </div>
+        <div class="translate-x-[120px] flex items-center">
+            <img src="../../assets/screenshot.png" alt="screenshot">
+        </div>
+        <div class="flex justify-end">
+            <div class="w-[313px] h-[640px] bg-[#5D90CD] rounded-l-[50px]"></div>
+        </div>
+    </div>
+    <div class="flex flex-col gap-[89px]">
+        <h1 class="font-bold text-[50px]">Recruiting volunteers in less than an hour</h1>
+        <div class="flex justify-center gap-10">
+            <div class="border border-[#E7513F] rounded-[40px] flex flex-col items-center pt-[80px] pb-[30px] gap-y-[10px] w-[382px]">
+                <img class="h-[135px] w-[68px] mb-12" src="../../assets/Vector.png" alt="one">
+                <h1 class="font-bold text-3xl">Express your interest</h1>
+                <p class="text-[#797979] text-[22px] h-[150px]">Fill out a quick interest form to tell <br> us more about your organization</p>
+                <p class="font-bold text-[18px] text-[#5961F9] underline italic">2 minutes</p>
+            </div>
+            <div class="border border-[#E7513F] rounded-[40px] flex flex-col items-center pt-[80px] pb-[30px] gap-y-[10px] w-[382px]">
+                <img class="h-[135px] w-[86px] mb-12" src="../../assets/Vector-1.png" alt="two">
+                <h1 class="font-bold text-3xl">Connect Face-to Face</h1>
+                <p class="text-[#797979] text-[22px] h-[150px]">Once we identify a fit, we’ll invite <br> you to an interview for us to learn more about each other.</p>
+                <p class="font-bold text-[18px] text-[#5961F9] underline italic">30 minutes</p>
+            </div>
+            <div class="border border-[#E7513F] rounded-[40px] flex flex-col items-center pt-[80px] pb-[30px] gap-y-[10px] w-[382px]">
+                <img class="h-[135px] w-[88px] mb-12" src="../../assets/Vector-2.png" alt="three">
+                <h1 class="font-bold text-3xl">Apply to Be a Partner</h1>
+                <p class="text-[#797979] text-[22px] h-[150px]">Let us know who you are looking for to attract the talents that fit your needs. Leave the searching to us from here on. </p>
+                <p class="font-bold text-[18px] text-[#5961F9] underline italic">20 minutes</p>
+            </div>
+        </div>
+    </div>
+    <a href="#">
+        <h1 class="mt-20 mb-32 bg-[#E7513F] text-white font-bold text-xl inline-block px-14 py-7 rounded-[47px]">
+            Count me in!
+        </h1>
+    </a>
     <FooterMod />
 </template>
 
